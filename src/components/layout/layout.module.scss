@@ -23,6 +23,10 @@
   padding-bottom: 5rem;
 }
 
+img + main {
+  margin-top: 18px;
+}
+
 .header {
   position: fixed;
   z-index: 3;
