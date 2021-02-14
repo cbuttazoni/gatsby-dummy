@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr min(
+      #{$grid-content-width},
+      calc(100% - #{$grid-column-gap * 2})
+    ) 1fr;
+  grid-column-gap: $grid-column-gap;
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+.full_bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.main_wrapper {
+  flex: 1;
+  padding-bottom: 5rem;
+}
+
+.header {
+  position: fixed;
+  z-index: 3;
+  transition: background 350ms ease 0s;
+  background-color: $header-background;
+  height: $header-height;
+}
+
+.footer {
+  background-color: $footer-background;
+  position: relative;
+  bottom: 0;
+}
+
+img.cover {
+  max-height: 50vh;
+  object-fit: cover;
+}

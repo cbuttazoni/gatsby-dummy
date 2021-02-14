@@ -1,0 +1,27 @@
+@import "./variables";
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+body {
+  font: 100% $font-family-default;
+  font-size: 1rem;
+  background-color: $background;
+  color: $font-color-default;
+}
+
+a {
+  color: $link-color-default;
+  text-decoration: $link-decoration-default;
+  &:hover {
+    color: $link-color-hover-default;
+    text-decoration: $link-decoration-hover-default;;
+  }
+}

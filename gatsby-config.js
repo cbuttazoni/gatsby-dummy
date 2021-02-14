@@ -1,29 +1,119 @@
 module.exports = {
   siteMetadata: {
-    title: "dummy",
+    title: "Site-Title",
+    author: "My Name",
+    description: "My site description...",
+    siteUrl: "https://www.example.com",
+    useLogo: false,
+    social: [
+      {
+        name: "twitter",
+        url: "https://twitter.com/gatsbyjs",
+      },
+      {
+        name: "github",
+        url: "https://github.com/gatsbyjs",
+      },
+    ],
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+        published: true
+      },
+      {
+        name: "about",
+        link: "/about",
+        published: true
+      },
+      {
+        name: "me",
+        link: "/me",
+        published: true
+      },
+      {
+        name: "blog",
+        link: "/blog",
+        published: false
+      },
+      {
+        name: "contact",
+        link: "/contact",
+        published: true
+      },
+    ],
+    footerLinks: [
+      {
+        name: "impressum",
+        link: "/impressum",
+        published: true
+      },
+      {
+        name: "contact",
+        link: "/contact",
+        published: true
+      },
+    ],
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-transformer-remark",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        name: "images",
-        path: "./src/images/",
+        host: "https://www.example.com",
+        sitemap: "https://www.example.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
-      __key: "images",
+    },
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 800,
+              backgroundColor: "transparent",
+            },
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/content/pages`,
       },
-      __key: "pages",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/content/news`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-plugin-draft",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sass",
+    "gatsby-transformer-sharp",
   ],
-};
+}

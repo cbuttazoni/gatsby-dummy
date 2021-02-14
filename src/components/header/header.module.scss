@@ -1,0 +1,37 @@
+@import "../../styles/variables";
+
+.header_wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr min(#{$grid-content-width}, calc(100% - #{$grid-column-gap * 2}))
+    1fr;
+  grid-column-gap: $grid-column-gap;
+}
+
+.header_wrapper > * {
+  grid-column: 2;
+}
+
+.header_inner_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+}
+
+.header_logo {
+  position: absolute;
+  margin: 0;
+}
+
+@media (max-width: 48em) {
+  .header_inner_wrapper {
+    display: block;
+  }
+
+  .header_title {
+    display: block;
+    float: left;
+    margin-top: #{$header-height / 2 - 10};
+  }
+}

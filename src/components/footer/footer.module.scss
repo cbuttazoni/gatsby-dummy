@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+.footer_wrapper {
+  color: white;
+  display: grid;
+  grid-template-columns:
+    1fr min(#{$grid-content-width}, calc(100% - #{$grid-column-gap * 2}))
+    1fr;
+  grid-column-gap: $grid-column-gap;
+}
+
+.footer_wrapper > * {
+  grid-column: 2;
+}
+
+.footer_inner_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  color: $footer-color;
+  font-size: $footer-font-size;
+  div:first-child,
+  div:last-child {
+      height: 100%;
+      width: 100%;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        color: $footer-navigation-color;
+        &[aria-current] {
+          color: $footer-navigation-color;
+        }
+        &:hover {
+          color: $footer-navigation-color-hover;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.footer_title {
+    font-size: x-large;
+    margin-top: 10px;
+    color: $footer-title-color;
+}
+
+@media (max-width: 48em) {
+  .footer_inner_wrapper {
+    display: block;
+    div:first-child,
+    div:last-child {
+        height: inherit;
+        width: 100%;
+    }
+  }
+}

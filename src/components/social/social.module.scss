@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.social {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      a {
+        text-decoration: none;
+        font-size: $social-font-size;
+        color: $social-color;
+        &:hover {
+          color: $social-color-hover;
+        }
+      }
+    }
+  }
+}

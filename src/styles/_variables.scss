@@ -1,0 +1,57 @@
+$color-white : #ffffff !default;
+$color-black : #000000 !default;
+$color-red : #f44336 !default;
+$color-green : green !default;
+$color-yellow : yellow !default;
+$color-grey-light : #f4f4f4 !default;
+$color-grey : #333 !default;
+
+$color-primary: $color-green;
+$color-secondary: $color-red;
+
+
+$font-family-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$font-size-default: 16px;
+$font-weight-default: 400;
+$font-color-default: $color-grey;
+
+$link-color-default: $color-green;
+$link-color-hover-default: darken($color-green, 30%);
+$link-decoration-default: none;
+$link-decoration-hover-default: underline;
+
+
+$background: $color-white;
+$grid-column-gap: 20px;
+$grid-content-width: 60ch;
+
+$header-background: $color-white;
+$header-height: 68px;
+
+
+$navigation-background: $header-background;
+$navigation-padding: 22px 16px;
+$navigation-font-size: 18px;
+$navigation-font-weight: 400;
+$navigation-font-hover-weight: 700;
+$navigation-color: $color-primary;
+$navigation-color-hover: darken($color-primary, 30%);
+$navigation-color-background: $color-grey-light;
+$navigation-color-hover-background: $navigation-color-background;
+$navigation-icon-background: $color-grey;
+$navigation-icon-background-hover: $color-grey;
+$navigation-divider: 1px solid $color-grey-light;
+$navigation-divider-last: 1px solid $color-grey;
+
+$footer-background: lighten($color-black, 10%);
+$footer-height: 2.5rem;
+$footer-font-size: $font-size-default;
+$footer-title-color: $color-yellow;
+$footer-color: $color-white;
+$footer-navigation-color: $color-white;
+$footer-navigation-color-hover: darken($color-white, 30%);
+
+
+$social-font-size: 16px;
+$social-color: $color-white;
+$social-color-hover: darken($color-white, 30%);

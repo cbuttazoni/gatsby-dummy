@@ -3,20 +3,20 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import MetaData from "../components/meta-data/meta-data"
 
-const Index = ({ data, location }) => {
+const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <MetaData title="Home" />
+      <MetaData title="All posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
             <header>
               <h3>
-                <Link to={node.fields.slug}>
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -36,7 +36,7 @@ const Index = ({ data, location }) => {
   )
 }
 
-export default Index
+export default BlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -47,7 +47,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "news" }, draft: { eq: false } } }
+      filter: { fields: { collection: { eq: "posts" }, draft: { eq: false } } }
     ) {
       edges {
         node {

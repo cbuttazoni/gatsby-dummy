@@ -1,0 +1,29 @@
+{
+    "version": "0.1",
+    "language": "en",
+    "ignorePaths": [
+        "packages/cspell-lib/dictionaries/**",
+        "packages/cspell-lib/migrated_dictionaries/**",
+        "package*.json",
+        ".gitattributes",
+        ".gitignore",
+        "cspell.json",
+        "**/{cspell.json,cSpell.json,.cspell.json}",
+        "**/package*.json",
+        "**/temp/**/*",
+        "**/node_modules/**",
+        "**/.gitignore",
+        "**/eslint.js",
+        "**/public/**",
+        "**/.vscode/**"
+    ],
+    "enabled": true,
+    "allowCompoundWords": true,
+    "showStatus": true,
+    "flagWords": [
+        "hte"
+    ],
+    "ignoreWords": [],
+    "words": [
+    ]
+}
