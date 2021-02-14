@@ -1,24 +1,22 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout/layout"
-import MetaData from "../components/meta-data/meta-data"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout/layout';
+import MetaData from '../components/meta-data/meta-data';
 
 const Index = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
       <MetaData title="Home" />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
               <h3>
-                <Link to={node.fields.slug}>
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
             </header>
@@ -30,13 +28,13 @@ const Index = ({ data, location }) => {
               />
             </section>
           </article>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -64,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

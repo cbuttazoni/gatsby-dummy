@@ -1,13 +1,13 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../components/layout/layout"
-import MetaData from "../components/meta-data/meta-data"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout/layout';
+import MetaData from '../components/meta-data/meta-data';
 
 const NewsItemTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const { previous, next } = pageContext
-  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid
+  const post = data.markdownRemark;
+  const { previous, next } = pageContext;
+  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
 
   return (
     <Layout>
@@ -16,20 +16,14 @@ const NewsItemTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-      {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
+        {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
         <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <footer>
-          news footer info...
-        </footer>
+        <hr />
+        <footer>news footer info...</footer>
       </article>
 
       <nav>
@@ -59,10 +53,10 @@ const NewsItemTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default NewsItemTemplate
+export default NewsItemTemplate;
 export const pageQuery = graphql`
   query NewsItemBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -84,4 +78,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,91 +1,91 @@
 module.exports = {
   siteMetadata: {
-    title: "Site-Title",
-    author: "My Name",
-    description: "My site description...",
-    siteUrl: "https://www.example.com",
+    title: 'Site-Title',
+    author: 'My Name',
+    description: 'My site description...',
+    siteUrl: 'https://www.example.com',
     useLogo: false,
     social: [
       {
-        name: "twitter",
-        url: "https://twitter.com/gatsbyjs",
+        name: 'twitter',
+        url: 'https://twitter.com/gatsbyjs',
       },
       {
-        name: "github",
-        url: "https://github.com/gatsbyjs",
+        name: 'github',
+        url: 'https://github.com/gatsbyjs',
       },
     ],
     menuLinks: [
       {
-        name: "home",
-        link: "/",
-        published: true
+        name: 'home',
+        link: '/',
+        published: true,
       },
       {
-        name: "about",
-        link: "/about",
-        published: true
+        name: 'about',
+        link: '/about',
+        published: true,
       },
       {
-        name: "me",
-        link: "/me",
-        published: true
+        name: 'me',
+        link: '/me',
+        published: true,
       },
       {
-        name: "blog",
-        link: "/blog",
-        published: false
+        name: 'blog',
+        link: '/blog',
+        published: false,
       },
       {
-        name: "contact",
-        link: "/contact",
-        published: true
+        name: 'contact',
+        link: '/contact',
+        published: true,
       },
     ],
     footerLinks: [
       {
-        name: "impressum",
-        link: "/impressum",
-        published: true
+        name: 'impressum',
+        link: '/impressum',
+        published: true,
       },
       {
-        name: "contact",
-        link: "/contact",
-        published: true
+        name: 'contact',
+        link: '/contact',
+        published: true,
       },
     ],
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: "https://www.example.com",
-        sitemap: "https://www.example.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        host: 'https://www.example.com',
+        sitemap: 'https://www.example.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
+            resolve: 'gatsby-remark-relative-images',
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800,
-              backgroundColor: "transparent",
+              backgroundColor: 'transparent',
             },
           },
         ],
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
+        name: 'pages',
         path: `${__dirname}/content/pages`,
       },
     },
@@ -104,16 +104,16 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-plugin-draft",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sass",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-draft',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sass',
+    'gatsby-transformer-sharp',
   ],
-}
+};

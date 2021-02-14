@@ -1,13 +1,13 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../components/layout/layout"
-import MetaData from "../components/meta-data/meta-data"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout/layout';
+import MetaData from '../components/meta-data/meta-data';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const { previous, next } = pageContext
-  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid
+  const post = data.markdownRemark;
+  const { previous, next } = pageContext;
+  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
 
   return (
     <Layout>
@@ -16,20 +16,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-      {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
+        {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
         <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <footer>
-          footer info...
-        </footer>
+        <hr />
+        <footer>footer info...</footer>
       </article>
 
       <nav>
@@ -59,13 +53,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } } ) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
@@ -84,4 +78,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

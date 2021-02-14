@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../components/layout/layout"
-import MetaData from "../components/meta-data/meta-data"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout/layout';
+import MetaData from '../components/meta-data/meta-data';
 
 const PageItemTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid
+  const post = data.markdownRemark;
+  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
 
   return (
     <Layout>
@@ -25,10 +25,10 @@ const PageItemTemplate = ({ data, pageContext, location }) => {
         </footer> */}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default PageItemTemplate
+export default PageItemTemplate;
 export const pageQuery = graphql`
   query PageItemBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -50,4 +50,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

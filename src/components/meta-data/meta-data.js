@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const MetaData = ({ author, description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -16,11 +16,13 @@ const MetaData = ({ author, description, lang, meta, title }) => {
         }
       }
     `
-  )
+  );
 
-  const pageTitle = title ? `${title} - ${site.siteMetadata.title}` : site.siteMetadata.title
-  const metaDescription = description || site.siteMetadata.description
-  const metaAuthor = author || site.siteMetadata.author
+  const pageTitle = title
+    ? `${title} - ${site.siteMetadata.title}`
+    : site.siteMetadata.title;
+  const metaDescription = description || site.siteMetadata.description;
+  const metaAuthor = author || site.siteMetadata.author;
 
   return (
     <Helmet
@@ -51,15 +53,15 @@ const MetaData = ({ author, description, lang, meta, title }) => {
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
 MetaData.defaultProps = {
   lang: `de`,
   meta: [],
   description: ``,
   author: ``,
-}
+};
 
 MetaData.propTypes = {
   description: PropTypes.string,
@@ -67,6 +69,6 @@ MetaData.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
-}
+};
 
-export default MetaData
+export default MetaData;

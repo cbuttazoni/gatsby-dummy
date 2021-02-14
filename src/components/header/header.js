@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import Navigation from "../../components/navigation/navigation"
-import styles from "./header.module.scss"
-import logo from "../../images/logo.png"
+import React from 'react';
+import { Link } from 'gatsby';
+import Navigation from '../../components/navigation/navigation';
+import styles from './header.module.scss';
+import logo from '../../images/logo.png';
 
 export default ({ siteMetadata }) => {
   return (
@@ -20,5 +20,5 @@ export default ({ siteMetadata }) => {
         <Navigation menuLinks={siteMetadata?.menuLinks} />
       </div>
     </div>
-  )
-}
+  );
+};
