@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 
-const PageItemTemplate = ({ data, pageContext, location }) => {
+const PageItemTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
 
@@ -20,12 +21,14 @@ const PageItemTemplate = ({ data, pageContext, location }) => {
           {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        {/* <footer>
-          <span>erstellt am: {post.frontmatter.date}</span>
-        </footer> */}
       </div>
     </Layout>
   );
+};
+
+PageItemTemplate.defaultProps = {};
+PageItemTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default PageItemTemplate;
@@ -37,7 +40,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
         description
         type
         coverImage {

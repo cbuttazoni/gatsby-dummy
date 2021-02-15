@@ -62,7 +62,6 @@ MetaData.defaultProps = {
   description: ``,
   author: ``,
 };
-
 MetaData.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,

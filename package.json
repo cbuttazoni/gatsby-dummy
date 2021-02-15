@@ -11,6 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ignore-path .gitignore . --ext js --ext jsx",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -35,7 +36,11 @@
     "sass": "^1.32.6"
   },
   "devDependencies": {
-    "eslint-config-react-app": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-webpack-plugin": "^2.5.1",
+    "gatsby-plugin-eslint": "^3.0.0",
     "prettier": "2.2.1"
   }
 }

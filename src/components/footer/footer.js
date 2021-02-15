@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styles from './footer.module.scss';
 import Social from '../social/social';
 
-export default ({ siteMetadata }) => {
+const Footer = ({ siteMetadata }) => {
   return (
     <div className={styles.footer_wrapper}>
       <div className={styles.footer_inner_wrapper}>
@@ -38,3 +39,10 @@ export default ({ siteMetadata }) => {
     </div>
   );
 };
+
+Footer.defaultProps = {};
+Footer.propTypes = {
+  siteMetadata: PropTypes.object,
+};
+
+export default Footer;

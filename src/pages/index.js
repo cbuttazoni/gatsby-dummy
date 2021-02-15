@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 
-const Index = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <MetaData title="Home" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
@@ -34,8 +34,12 @@ const Index = ({ data, location }) => {
   );
 };
 
-export default Index;
+Index.defaultProps = {};
+Index.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
+export default Index;
 export const pageQuery = graphql`
   query {
     site {

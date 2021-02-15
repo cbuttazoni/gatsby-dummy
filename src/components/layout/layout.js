@@ -1,12 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import MetaData from '../meta-data/meta-data';
 import defaultCoverImage from '../../images/cover.jpg';
 import styles from './layout.module.scss';
 
-export default ({ children, location, image }) => {
+const Layout = ({ children, image }) => {
   const coverImage = image || defaultCoverImage;
   const data = useStaticQuery(
     graphql`
@@ -50,3 +51,11 @@ export default ({ children, location, image }) => {
     </React.Fragment>
   );
 };
+
+Layout.defaultProps = {};
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  image: PropTypes.string,
+};
+
+export default Layout;

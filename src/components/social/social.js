@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styles from './social.module.scss';
 
-export default () => {
+const Social = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -23,10 +23,15 @@ export default () => {
       <ul>
         {data?.site?.siteMetadata?.social?.map((link) => (
           <li key={link.name}>
-            <Link to={link.url}>{link.name}</Link>
+            <a href={link.url} rel="noopener noreferrer">{link.name}</a>
           </li>
         ))}
       </ul>
     </section>
   );
 };
+
+Social.defaultProps = {};
+Social.propTypes = {};
+
+export default Social;

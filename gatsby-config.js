@@ -112,8 +112,21 @@ module.exports = {
     },
     'gatsby-plugin-draft',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ['/blog'],
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        stages: ['develop'],
+        extensions: ['js', 'jsx'],
+        exclude: ['node_modules', '.cache', 'public', 'content'],
+      }
+    }
   ],
 };

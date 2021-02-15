@@ -13,4 +13,8 @@ const AboutPage = () => (
     </main>
   </Layout>
 );
+
+AboutPage.defaultProps = {};
+AboutPage.propTypes = {};
+
 export default AboutPage;

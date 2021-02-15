@@ -1,9 +1,8 @@
 ---
 title: 'Impressum'
-date: '2021-06-19'
+description: Impressum
 coverImage:
 type: page
-description: Impressum
 draft: false
 ---
 

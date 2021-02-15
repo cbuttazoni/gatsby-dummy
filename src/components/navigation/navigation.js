@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styles from './navigation.module.scss';
 
-export default ({ menuLinks }) => {
+const Navigation = ({ menuLinks }) => {
   return (
     <nav className={styles.navigation}>
       <input className={styles.menu_btn} type="checkbox" id="menu-btn" />
@@ -21,3 +22,10 @@ export default ({ menuLinks }) => {
     </nav>
   );
 };
+
+Navigation.defaultProps = {};
+Navigation.propTypes = {
+  menuLinks: PropTypes.arrayOf(PropTypes.object),
+};
+
+export default Navigation;

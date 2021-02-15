@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import Navigation from '../../components/navigation/navigation';
 import styles from './header.module.scss';
 import logo from '../../images/logo.png';
 
-export default ({ siteMetadata }) => {
+const Header = ({ siteMetadata }) => {
   return (
     <div className={styles.header_wrapper}>
       <div className={styles.header_inner_wrapper}>
@@ -22,3 +23,10 @@ export default ({ siteMetadata }) => {
     </div>
   );
 };
+
+Header.defaultProps = {};
+Header.propTypes = {
+  siteMetadata: PropTypes.object,
+};
+
+export default Header;

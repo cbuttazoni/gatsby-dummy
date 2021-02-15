@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 
-const NewsItemTemplate = ({ data, pageContext, location }) => {
+const NewsItemTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
   const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
@@ -54,6 +55,12 @@ const NewsItemTemplate = ({ data, pageContext, location }) => {
       </nav>
     </Layout>
   );
+};
+
+NewsItemTemplate.defaultProps = {};
+NewsItemTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default NewsItemTemplate;

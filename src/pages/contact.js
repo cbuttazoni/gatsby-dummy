@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 
@@ -7,6 +8,7 @@ const ContactPage = ({ data: { site } }) => {
   return (
     <Layout>
       <MetaData title="Contact" />
+      <h1>{site?.title}</h1>
       <div className="two-grids -contact">
         <div
           className="post-thumbnail"
@@ -53,6 +55,12 @@ const ContactPage = ({ data: { site } }) => {
     </Layout>
   );
 };
+
+ContactPage.defaultProps = {};
+ContactPage.propTypes = {
+  data: PropTypes.object,
+};
+
 export default ContactPage;
 export const pageQuery = graphql`
   query ContactPageQuery {
