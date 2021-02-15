@@ -1,0 +1,46 @@
+.grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+.card {
+  display: grid;
+  background-color: lightslategray;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px gray;
+  overflow: hidden;
+  line-height: 1.5;
+  &:hover {
+    color: black;
+  }
+  a {
+    color: darkblue;
+    &:hover {
+      color: black;
+    }
+  }
+  > a img {
+    display: block;
+  }
+  > header,
+  section {
+    padding: 12px;
+  }
+  > h2 {
+    margin: 0 0 0.5rem 0;
+    + small {
+      color: black;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .grids {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import styles from './index.module.scss';
 
 const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -10,14 +11,16 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <MetaData title="Home" />
+      <h1>Welcome surfer...</h1>
+      <div className={styles.grids}>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields.slug} className={styles.card}>
             <header>
-              <h3>
+              <h2>
                 <Link to={node.fields.slug}>{title}</Link>
-              </h3>
+              </h2>
               <small>{node.frontmatter.date}</small>
             </header>
             <section>
@@ -30,6 +33,7 @@ const Index = ({ data }) => {
           </article>
         );
       })}
+      </div>
     </Layout>
   );
 };

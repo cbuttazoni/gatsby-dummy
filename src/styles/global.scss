@@ -12,7 +12,7 @@ body {
 
 body {
   font: 100% $font-family-default;
-  font-size: 1rem;
+  font-size: $font-size-default;
   background-color: $background;
   color: $font-color-default;
 }
@@ -24,4 +24,10 @@ a {
     color: $link-color-hover-default;
     text-decoration: $link-decoration-hover-default;;
   }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }

@@ -3,13 +3,14 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import styles from './contact.module.scss';
 
 const ContactPage = ({ data: { site } }) => {
   return (
     <Layout>
       <MetaData title="Contact" />
       <h1>{site?.title}</h1>
-      <div className="two-grids -contact">
+      <div className={[styles.two_grids, styles._contact].join(" ")}>
         <div
           className="post-thumbnail"
           style={{
@@ -21,8 +22,7 @@ const ContactPage = ({ data: { site } }) => {
           <p>Let me help you kick start your next project &rarr;</p>
         </div>
         <div>
-          <form
-            className="form-container"
+          <form className={styles.form_container}
             action="https://sendmail.w3layouts.com/SubmitContactForm"
             method="post"
           >
@@ -45,7 +45,7 @@ const ContactPage = ({ data: { site } }) => {
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <input
                 type="submit"
-                className="button -primary"
+                className={[styles.button, styles._primary].join(" ")}
                 style={{ marginRight: 0 }}
               />
             </div>
