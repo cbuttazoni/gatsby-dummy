@@ -15,7 +15,16 @@ const Navigation = ({ menuLinks }) => {
           ?.filter((e) => e.published)
           .map((link) => (
             <li key={link.name}>
-              <Link to={link.link}>{link.name}</Link>
+              <Link to={link.link} aria-haspopup={link?.subMenu?.length > 0 ? true : false}>{link.name}</Link>
+              {link.subMenu && link.subMenu.length > 0 ? (
+                <ul aria-label="submenu">
+                  {link.subMenu.map((subLink) => (
+                    <li key={subLink.name}>
+                      <a href={subLink.link}>{subLink.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </li>
           ))}
       </ul>

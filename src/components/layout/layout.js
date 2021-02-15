@@ -20,6 +20,11 @@ const Layout = ({ children, image }) => {
               name
               link
               published
+              subMenu {
+                name
+                link
+                published
+              }
             }
             footerLinks {
               name

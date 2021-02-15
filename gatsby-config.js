@@ -25,6 +25,18 @@ module.exports = {
         name: 'about',
         link: '/about',
         published: true,
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            published: true,
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            published: true,
+          },
+        ],
       },
       {
         name: 'me',

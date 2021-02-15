@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .navigation {
   margin-left: -$grid-column-gap;
@@ -12,6 +12,18 @@
     background-color: $navigation-background;
     li {
       border-bottom: $navigation-divider;
+      color: white;
+      display: block;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover > ul,
+      &:focus-within > ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
       a {
         display: block;
         padding: $navigation-padding;
@@ -33,6 +45,29 @@
       }
       &:last-child {
         border-bottom: $navigation-divider-last;
+      }
+      ul {
+        list-style: none;
+        background-color: $navigation-background;
+        min-width: 10rem;
+        position: initial;
+        transition: all 0.5s ease;
+        left: 0;
+        margin-left: 10px;
+        li {
+          clear: both;
+          width: 100%;
+          &:hover {
+            background-color: red;
+          }
+          a {
+            color: $navigation-color;
+            text-decoration: none;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
       }
     }
   }
@@ -63,7 +98,7 @@
   .menu_icon .nav_icon:before,
   .menu_icon .nav_icon:after {
     background: $navigation-icon-background;
-    content: "";
+    content: '';
     display: block;
     height: 100%;
     position: absolute;
@@ -80,7 +115,7 @@
     display: none;
   }
   .menu_btn:checked ~ .menu {
-    max-height: 350px;
+    max-height: 500px;
   }
   .menu_btn:checked ~ .menu_icon .nav_icon {
     background: transparent;
@@ -100,6 +135,23 @@
   .navigation {
     margin-left: $grid-column-gap;
     margin-right: $grid-column-gap;
+  }
+  .navigation ul {
+    overflow: visible;
+    li {
+      ul {
+        position: absolute;
+        margin-left: 0;
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+        &:hover {
+          visibility: visible;
+          opacity: 1;
+          display: block;
+        }
+      }
+    }
   }
   .navigation li {
     float: left;
