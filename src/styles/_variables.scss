@@ -1,4 +1,6 @@
+// colors
 $color-white : #ffffff !default;
+$color-whitesmoke : whitesmoke !default;
 $color-black : #000000 !default;
 $color-red : #f44336 !default;
 $color-green : green !default;
@@ -11,6 +13,7 @@ $color-primary: $color-green;
 $color-secondary: $color-red;
 $color-accent: $color-yellow;
 
+// spaces
 $space-base : 16px !default;
 $space-none : 0 !default;
 $space-xxs  : ($space-base - 12);
@@ -22,13 +25,12 @@ $space-xl   : ($space-base + 6);
 $space-xxl  : ($space-base + 12);
 $spaces: ('none': $space-none, 'xxs': $space-xxs, 'xs': $space-xs, 'sm': $space-sm, 'md': $space-md, 'lg': $space-lg, 'xl': $space-xl, 'xxl': $space-xxl) !default;
 
-
+// fonts
 $font-family-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $font-size-default: 18px;
 $font-weight-default: 400;
 $font-color-default: $color-gray;
 $line-height: 1.75rem;
-
 
 $h1:        (size: 5rem,     line-height: 5rem,      font-weight: 700) !default;
 $h2:        (size: 3.75rem,  line-height: 3.75rem,   font-weight: 700) !default;
@@ -40,22 +42,23 @@ $body:      (size: 1rem,     line-height: 1.75rem,   font-weight: 400) !default;
 $p:         (size: 1rem,     line-height: 1.75rem,   font-weight: 400) !default;
 $headings: ('h1': $h1, 'h2': $h2, 'h3': $h3, 'h4': $h4, 'h5': $h5, 'h6': $h6, 'body': $body, 'p': $p) !default;
 
-
 $link-color-default: $color-green;
 $link-color-hover-default: darken($color-green, 30%);
 $link-decoration-default: none;
 $link-decoration-hover-default: underline;
 
-
-$background: $color-white;
+// layouts
+$background: $color-whitesmoke;
 $grid-column-gap: 20px;
 $grid-content-width: 60ch;
 $border-radius-default: 5px;
+$border-radius-sm: 3px;
+$border-radius-lg: 10px;
 
 $header-background: $color-white;
 $header-height: 68px;
 
-
+// navigation
 $navigation-background: $header-background;
 $navigation-padding: 22px 16px;
 $navigation-font-size: 18px;
@@ -70,7 +73,7 @@ $navigation-icon-background-hover: $color-gray;
 $navigation-divider: 1px solid $color-gray-light;
 $navigation-divider-last: 1px solid $color-gray;
 
-
+// footer
 $footer-background: lighten($color-black, 10%);
 $footer-height: 2.5rem;
 $footer-font-size: $font-size-default;
@@ -79,15 +82,51 @@ $footer-color: $color-white;
 $footer-navigation-color: $color-white;
 $footer-navigation-color-hover: darken($color-white, 30%);
 
-
-$social-font-size: 16px;
-$social-color: $color-white;
-$social-color-hover: darken($color-white, 30%);
-
-
+// images
 $image-border-radius: 10px;
 
+// breakpoints
+$breakpoint-xs: 320px !default;
+$breakpoint-sm: 480px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1024px !default;
+$sizes: ('xs': 0, 'sm': ($breakpoint-xs + 1), 'md': ($breakpoint-sm + 1), 'lg': ($breakpoint-md + 1), 'xl': ($breakpoint-lg + 1)) !default;
+$breakpoint-xs-min: 0 !default;
+$breakpoint-xs-max: $breakpoint-xs !default;
+$breakpoint-sm-min: map-get($sizes, "sm") !default;
+$breakpoint-sm-max: $breakpoint-sm !default;
+$breakpoint-md-min: map-get($sizes, "md") !default;
+$breakpoint-md-max: $breakpoint-md !default;
+$breakpoint-lg-min: map-get($sizes, "lg") !default;
+$breakpoint-lg-max: $breakpoint-lg !default;
+$breakpoint-xl-min: map-get($sizes, "xl") !default;
+$breakpoint-xl-max: 9999px !default;
 
+// buttons
+$button-padding                     : $space-xs $space-md !default;
+$button-transition                  : 0.3s cubic-bezier(.25, .8, .5, 1) !default;
+$button-font-size                   : $font-size-default !default;
+$button-font-weight                 : 400 !default;
+$button-font-color                  : $color-white !default;
+$button-background                  : $color-primary !default;
+$button-font-color-hover            : darken($button-font-color, 30%) !default;
+$button-background-hover            : darken($button-background, 30%) !default;
+$button-border                      : 1px solid $color-black !default;
+$button-border-radius               : $border-radius-sm !default;
+$button-background-primary          : $button-background !default; 
+$button-border-color-primary        : $color-black !default;
+$button-font-color-primary          : $button-font-color !default;
+$button-background-primary-hover    : darken($button-background, 30%) !default;
+$button-border-color-primary-hover  : $color-black !default;
+$button-font-color-primary-hover    : darken($button-font-color, 30%) !default;
+$button-background-secondary        : $color-secondary !default; 
+$button-border-color-secondary      : $color-black !default;
+$button-font-color-secondary        : $button-font-color !default;
+$button-background-secondary-hover  : darken($button-background-secondary, 30%) !default;
+$button-border-color-secondary-hover: $color-black !default;
+$button-font-color-secondary-hover  : darken($button-font-color, 30%) !default;
+
+// forms
 $form-background: $color-gray-dark;
 $form-border: none;
 $form-border-radius: $border-radius-default;
@@ -102,3 +141,8 @@ $form-input-padding: $space-xxs 0;
 $form-input-line-height: $space-xxl;
 $form-input-textarea-height: 150px;
 $form-input-margin-bottom: 1.5rem;
+
+// social
+$social-font-size: 16px;
+$social-color: $color-white;
+$social-color-hover: darken($color-white, 30%);
