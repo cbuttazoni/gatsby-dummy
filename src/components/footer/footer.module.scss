@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: $space-xxl;
   color: $footer-color;
   font-size: $footer-font-size;
   div:first-child,
@@ -47,12 +47,11 @@
       }
     }
   }
-}
-
-.footer_title {
-    font-size: x-large;
-    margin-top: 10px;
-    color: $footer-title-color;
+  h4 {
+      font-size: x-large;
+      margin-top: $space-md;
+      color: $footer-title-color;
+  }
 }
 
 @media (max-width: 48em) {

@@ -19,7 +19,7 @@ const Social = () => {
   );
   return (
     <section className={styles.social}>
-      <h3>Social</h3>
+      <h4>Social</h4>
       <ul>
         {data?.site?.siteMetadata?.social?.map((link) => (
           <li key={link.name}>

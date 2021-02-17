@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Site-Title',
     author: 'My Name',
+    email: 'info@example.com',
     description: 'My site description...',
     siteUrl: 'https://www.example.com',
     useLogo: false,
@@ -87,7 +88,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 800,
+              maxWidth: 700,
               backgroundColor: 'transparent',
             },
           },

@@ -3,33 +3,31 @@ $color-black : #000000 !default;
 $color-red : #f44336 !default;
 $color-green : green !default;
 $color-yellow : yellow !default;
-$color-grey-light : #f4f4f4 !default;
-$color-grey : #333 !default;
+$color-gray-light : #f4f4f4 !default;
+$color-gray : #333 !default;
+$color-gray-dark : darkgray !default;
 
 $color-primary: $color-green;
 $color-secondary: $color-red;
 $color-accent: $color-yellow;
 
-
-$space-base   : 16px !default;
-$space-x-base : $space-base !default;
-$space-y-base : $space-base !default;
-
-$space-none : (x: 0, y: 0) !default;
-$space-xs   : (x: ($space-x-base * .25), y: ($space-y-base * .25)) !default;
-$space-sm   : (x: ($space-x-base * .5), y: ($space-y-base * .5)) !default;
-$space-md   : (x: $space-x-base, y: $space-y-base) !default;
-$space-lg   : (x: ($space-x-base * 1.5), y: ($space-y-base * 1.5)) !default;
-$space-xl   : (x: ($space-x-base * 3), y: ($space-y-base * 3)) !default;
-$spaces: ('none': $space-none, 'xs': $space-xs, 'sm': $space-sm, 'md': $space-md, 'lg': $space-lg, 'xl': $space-xl) !default;
+$space-base : 16px !default;
+$space-none : 0 !default;
+$space-xxs  : ($space-base - 12);
+$space-xs   : ($space-base - 6);
+$space-sm   : ($space-base - 3);
+$space-md   : $space-base;
+$space-lg   : ($space-base + 3);
+$space-xl   : ($space-base + 6);
+$space-xxl  : ($space-base + 12);
+$spaces: ('none': $space-none, 'xxs': $space-xxs, 'xs': $space-xs, 'sm': $space-sm, 'md': $space-md, 'lg': $space-lg, 'xl': $space-xl, 'xxl': $space-xxl) !default;
 
 
 $font-family-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $font-size-default: 18px;
 $font-weight-default: 400;
-$font-color-default: $color-grey;
-$line-height: 1.6;
-
+$font-color-default: $color-gray;
+$line-height: 1.75rem;
 
 
 $h1:        (size: 5rem,     line-height: 5rem,      font-weight: 700) !default;
@@ -40,9 +38,7 @@ $h5:        (size: 1.5rem,   line-height: 2rem,      font-weight: 400) !default;
 $h6:        (size: 1.5rem,   line-height: 2rem,      font-weight: 400) !default;
 $body:      (size: 1rem,     line-height: 1.75rem,   font-weight: 400) !default;
 $p:         (size: 1rem,     line-height: 1.75rem,   font-weight: 400) !default;
-
 $headings: ('h1': $h1, 'h2': $h2, 'h3': $h3, 'h4': $h4, 'h5': $h5, 'h6': $h6, 'body': $body, 'p': $p) !default;
-
 
 
 $link-color-default: $color-green;
@@ -54,6 +50,7 @@ $link-decoration-hover-default: underline;
 $background: $color-white;
 $grid-column-gap: 20px;
 $grid-content-width: 60ch;
+$border-radius-default: 5px;
 
 $header-background: $color-white;
 $header-height: 68px;
@@ -66,12 +63,13 @@ $navigation-font-weight: 400;
 $navigation-font-hover-weight: 700;
 $navigation-color: $color-primary;
 $navigation-color-hover: darken($color-primary, 30%);
-$navigation-color-background: $color-grey-light;
+$navigation-color-background: $color-gray-light;
 $navigation-color-hover-background: $navigation-color-background;
-$navigation-icon-background: $color-grey;
-$navigation-icon-background-hover: $color-grey;
-$navigation-divider: 1px solid $color-grey-light;
-$navigation-divider-last: 1px solid $color-grey;
+$navigation-icon-background: $color-gray;
+$navigation-icon-background-hover: $color-gray;
+$navigation-divider: 1px solid $color-gray-light;
+$navigation-divider-last: 1px solid $color-gray;
+
 
 $footer-background: lighten($color-black, 10%);
 $footer-height: 2.5rem;
@@ -85,3 +83,22 @@ $footer-navigation-color-hover: darken($color-white, 30%);
 $social-font-size: 16px;
 $social-color: $color-white;
 $social-color-hover: darken($color-white, 30%);
+
+
+$image-border-radius: 10px;
+
+
+$form-background: $color-gray-dark;
+$form-border: none;
+$form-border-radius: $border-radius-default;
+$form-padding: $space-xxl;
+$form-label-color: $color-black;
+$form-input-border: 1px solid $color-gray-dark;
+$form-input-color: $font-color-default;
+$form-input-font-family: $font-family-default;
+$form-input-background: $color-gray-light;
+$form-input-border-radius: $border-radius-default;
+$form-input-padding: $space-xxs 0;
+$form-input-line-height: $space-xxl;
+$form-input-textarea-height: 150px;
+$form-input-margin-bottom: 1.5rem;

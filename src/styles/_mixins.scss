@@ -1,10 +1,18 @@
 @import './variables';
 
+// headings
 @each $key, $type in $headings {
     #{$key},
     .#{$key} {
         @each $subkey, $subtype in $type {
             #{$subkey}: #{$subtype}
         }
+    }
+}
+
+// spaces
+@each $key, $type in $spaces {
+    .h-space--#{$key} {
+        height: #{$type}
     }
 }

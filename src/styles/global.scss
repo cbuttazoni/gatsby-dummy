@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixins";
+@import './variables';
+@import './mixins';
 
 html {
   scroll-behavior: smooth;
@@ -22,6 +22,76 @@ a {
   text-decoration: $link-decoration-default;
   &:hover {
     color: $link-color-hover-default;
-    text-decoration: $link-decoration-hover-default;;
+    text-decoration: $link-decoration-hover-default;
   }
+}
+
+main {
+  img {
+    border-radius: $image-border-radius;
+  }
+  p + p {
+    margin-top: $space-md;
+  }
+  p > span.gatsby-resp-image-wrapper {
+    margin-top: $space-lg;
+  }
+  p + h1 {
+    margin-top: $space-md;
+  }
+  p + h2 {
+    margin-top: $space-md;
+  }
+  p + h3 {
+    margin-top: $space-md;
+  }
+  header + section {
+    margin-top: $space-md;
+  }
+}
+
+.button {
+  padding: 18px 27px;
+  display: inline-block;
+  background: yellow;
+  border: 1px solid black;
+  border-radius: 9px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  transition: background-color 0.3s linear;
+  &.-primary {
+    background-color: green;
+    border-color: black;
+    color: black;
+    &:hover {
+      background-color: royalblue;
+      color: darkkhaki;
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text-color);
+  }
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  appearance: none;
+  border: $form-input-border;
+  color: $form-input-color;
+  border-radius: $form-input-border-radius;
+  line-height: $form-input-line-height;
+  padding: $form-input-padding;
+  width: 100%;
+  margin-bottom: $form-input-margin-bottom;
+  background-color: $form-input-background;
+  font-family: $form-input-font-family;
+  font-size: unset;
+}
+textarea {
+  height: $form-input-textarea-height;
 }

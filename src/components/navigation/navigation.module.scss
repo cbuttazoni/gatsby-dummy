@@ -57,9 +57,6 @@
         li {
           clear: both;
           width: 100%;
-          &:hover {
-            background-color: red;
-          }
           a {
             color: $navigation-color;
             text-decoration: none;
@@ -163,18 +160,38 @@
         margin-top: 20px;
         width: 100%;
         display: inline-block;
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border: 20px solid transparent;
-          border-bottom-color: $navigation-background;
-          border-top: 0;
-          margin-left: -20px;
-          margin-top: -20px;
+        > ul {
+          border-radius: 10px;
+          border: 1px solid black;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom-color: #ffffff;
+            border-top: 0;
+            margin-left: -20px;
+            margin-top: -20px;
+            border-style: solid;
+            border-color: black transparent;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 0;
+            height: 0;
+            margin-left: -19px;
+            margin-top: -19px;
+            border-style: solid;
+            border-color: #fff transparent;
+            border-width: 0 19px 19px;
+            bottom: auto;
+          }
         }
       }
     }

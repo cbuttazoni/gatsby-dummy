@@ -9,7 +9,7 @@ const Footer = ({ siteMetadata }) => {
     <div className={styles.footer_wrapper}>
       <div className={styles.footer_inner_wrapper}>
         <div>
-          <p className={styles.footer_title}>Address</p>
+          <h4>Address</h4>
           <p>
             dummy name
             <br />
@@ -20,7 +20,7 @@ const Footer = ({ siteMetadata }) => {
           </p>
         </div>
         <div>
-          <p className={styles.footer_title}>Links</p>
+          <h4>Links</h4>
           <p>
             &copy; {new Date().getFullYear()} {siteMetadata?.title}
           </p>
