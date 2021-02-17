@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 html {
   scroll-behavior: smooth;
@@ -12,9 +13,8 @@ body {
 
 body {
   font: 100% $font-family-default;
-  font-size: $font-size-default;
-  background-color: $background;
   color: $font-color-default;
+  background-color: $background;
 }
 
 a {
@@ -24,10 +24,4 @@ a {
     color: $link-color-hover-default;
     text-decoration: $link-decoration-hover-default;;
   }
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
 }

@@ -18,8 +18,8 @@
       &:hover {
         cursor: pointer;
       }
-      &:hover > ul,
-      &:focus-within > ul {
+      &:hover > div > ul,
+      &:focus-within > div > ul {
         visibility: visible;
         opacity: 1;
         display: block;
@@ -94,7 +94,6 @@
     transition: background 0.2s ease-out;
     width: 18px;
   }
-
   .menu_icon .nav_icon:before,
   .menu_icon .nav_icon:after {
     background: $navigation-icon-background;
@@ -139,6 +138,7 @@
   .navigation ul {
     overflow: visible;
     li {
+      div,
       ul {
         position: absolute;
         margin-left: 0;
@@ -151,11 +151,38 @@
           display: block;
         }
       }
+      &:hover > div,
+      &:focus-within > div {
+        visibility: visible;
+        opacity: 1;
+      }
+      > div {
+        position: relative;
+        background-color: $navigation-background;
+        border-radius: 0.4em;
+        margin-top: 20px;
+        width: 100%;
+        display: inline-block;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 20px solid transparent;
+          border-bottom-color: $navigation-background;
+          border-top: 0;
+          margin-left: -20px;
+          margin-top: -20px;
+        }
+      }
     }
   }
   .navigation li {
     float: left;
     border-bottom: none !important;
+    height: $header-height;
   }
   .navigation li a {
     padding: 20px 30px;

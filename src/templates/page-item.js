@@ -7,7 +7,7 @@ import MetaData from '../components/meta-data/meta-data';
 
 const PageItemTemplate = ({ data }) => {
   const post = data.markdownRemark;
-  const coverImageFluid = post.frontmatter.coverImage?.childImageSharp?.fluid;
+  const coverImageFluid = post.frontmatter?.coverImage?.childImageSharp?.fluid;
 
   return (
     <Layout>

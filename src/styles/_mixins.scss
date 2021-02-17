@@ -1,0 +1,10 @@
+@import './variables';
+
+@each $key, $type in $headings {
+    #{$key},
+    .#{$key} {
+        @each $subkey, $subtype in $type {
+            #{$subkey}: #{$subtype}
+        }
+    }
+}
