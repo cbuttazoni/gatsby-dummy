@@ -37,6 +37,7 @@ a {
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   transition: $button-transition;
+  box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 8%);
   &.-primary {
     background-color: $button-background-primary;
     border-color: $button-border-color-primary;
@@ -44,6 +45,7 @@ a {
     &:hover {
       background-color: $button-background-primary-hover;
       border-color: $button-border-color-primary-hover;
+      color: $button-font-color-primary-hover;
       text-decoration: none;
     }
   }
@@ -54,15 +56,31 @@ a {
     &:hover {
       background-color: $button-background-secondary-hover;
       border-color: $button-border-color-secondary-hover;
+      color: $button-font-color-secondary-hover;
+      text-decoration: none;
+    }
+  }
+  &.-accent {
+    background-color: $button-background-accent;
+    border-color: $button-border-color-accent;
+    color: $button-font-color-accent;
+    &:hover {
+      background-color: $button-background-accent-hover;
+      border-color: $button-border-color-accent-hover;
+      color: $button-font-color-accent-hover;
       text-decoration: none;
     }
   }
   &.-small {
     padding: $button-padding-small;
   }
+  &.-wide {
+    width: 100%;
+  }
   &:hover {
     background-color: $button-background-hover;
     color: $button-font-color-hover;
+    box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 17%);
   }
 }
 

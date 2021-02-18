@@ -40,7 +40,7 @@ const Index = ({ data }) => {
         })}
       </div>
       <div className="h-space--md"></div>
-      <button className="button -small" onClick={() => scrollTo('#top')}>Top &uarr;</button>
+      <button className="button -small -wide -accent" onClick={() => scrollTo('#top')}>Top &uarr;</button>
     </Layout>
   );
 };

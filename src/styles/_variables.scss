@@ -127,6 +127,12 @@ $button-font-color-secondary        : $button-font-color !default;
 $button-background-secondary-hover  : darken($button-background-secondary, 30%) !default;
 $button-border-color-secondary-hover: $color-black !default;
 $button-font-color-secondary-hover  : darken($button-font-color, 30%) !default;
+$button-background-accent           : unset !default; 
+$button-border-color-accent         : $color-black !default;
+$button-font-color-accent           : $color-gray !default;
+$button-background-accent-hover     : unset !default;
+$button-border-color-accent-hover   : $color-black !default;
+$button-font-color-accent-hover     : darken($color-gray, 30%) !default;
 
 // forms
 $form-background: $background;
