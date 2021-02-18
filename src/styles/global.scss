@@ -30,20 +30,19 @@ main {
   img {
     border-radius: $image-border-radius;
   }
-  p + p {
-    margin-top: $space-md;
-  }
   p > span.gatsby-resp-image-wrapper {
     margin-top: $space-lg;
   }
-  p + h1 {
-    margin-top: $space-md;
-  }
-  p + h2 {
-    margin-top: $space-md;
-  }
-  p + h3 {
-    margin-top: $space-md;
+  p {
+    & + h1,
+    & + .h1,
+    & + h2,
+    & + .h2,
+    & + h3,
+    & + .h3,
+    & + p {
+      margin-top: $space-md;
+    }
   }
   header + section {
     margin-top: $space-md;

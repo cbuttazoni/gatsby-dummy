@@ -133,6 +133,7 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-smoothscroll',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

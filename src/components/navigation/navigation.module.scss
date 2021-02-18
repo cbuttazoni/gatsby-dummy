@@ -127,7 +127,7 @@
     top: 0;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-md-max) {
   .navigation {
     margin-left: $grid-column-gap;
     margin-right: $grid-column-gap;

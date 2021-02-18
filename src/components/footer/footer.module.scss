@@ -54,7 +54,7 @@
   }
 }
 
-@media (max-width: 48em) {
+@media (max-width: $breakpoint-md-max) {
   .footer_inner_wrapper {
     display: block;
     div:first-child,

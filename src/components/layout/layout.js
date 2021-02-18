@@ -39,7 +39,7 @@ const Layout = ({ children, image }) => {
   return (
     <React.Fragment>
       <MetaData title={data.site.siteMetadata.title} />
-      <div className={styles.wrapper}>
+      <div id="top" className={styles.wrapper}>
         <header className={[styles.full_bleed, styles.header].join(' ')}>
           <Header siteMetadata={data.site.siteMetadata} />
         </header>

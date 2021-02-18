@@ -24,7 +24,7 @@
   margin: 0;
 }
 
-@media (max-width: 48em) {
+@media (max-width: $breakpoint-md-max) {
   .header_inner_wrapper {
     display: block;
   }
