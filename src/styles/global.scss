@@ -26,29 +26,6 @@ a {
   }
 }
 
-main {
-  img {
-    border-radius: $image-border-radius;
-  }
-  p > span.gatsby-resp-image-wrapper {
-    margin-top: $space-lg;
-  }
-  p {
-    & + h1,
-    & + .h1,
-    & + h2,
-    & + .h2,
-    & + h3,
-    & + .h3,
-    & + p {
-      margin-top: $space-md;
-    }
-  }
-  header + section {
-    margin-top: $space-md;
-  }
-}
-
 .button {
   padding: $button-padding;
   display: inline-block;
@@ -80,6 +57,9 @@ main {
       text-decoration: none;
     }
   }
+  &.-small {
+    padding: $button-padding-small;
+  }
   &:hover {
     background-color: $button-background-hover;
     color: $button-font-color-hover;
@@ -103,4 +83,59 @@ textarea {
 }
 textarea {
   height: $form-input-textarea-height;
+}
+
+main {
+  img {
+    border-radius: $image-border-radius;
+  }
+  p > span.gatsby-resp-image-wrapper {
+    margin-top: $space-lg;
+  }
+  p {
+    & + h1,
+    & + .h1,
+    & + h2,
+    & + .h2,
+    & + h3,
+    & + .h3,
+    & + pre,
+    & + blockquote,
+    & + p {
+      margin-top: $space-md;
+    }
+  }
+  header + section {
+    margin-top: $space-md;
+  }
+
+  pre {
+    font-family: $pre-font-family;
+    font-size: $pre-font-size;
+    margin: $pre-margin;
+    padding: $pre-padding;
+  }
+  
+  blockquote {
+    border-left: $blockquote-border-left;
+    font-style: $blockquote-font-style;
+    margin: $blockquote-margin;
+    padding: $blockquote-padding;
+  }
+  
+  code {
+    border: $code-border;
+    border-radius: $code-border-radius;
+    padding: $code-padding;
+    background-color: $code-background;
+    color: $code-color;
+    font-family: $code-font-family;
+  }
+  
+  ul,
+  ol {
+    > li {
+      margin-left: 2rem;
+    }
+  }
 }

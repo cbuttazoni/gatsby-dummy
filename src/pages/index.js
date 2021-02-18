@@ -1,24 +1,28 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 import styles from './index.module.scss';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Index = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
-
+  const news = data.allMarkdownRemark.edges;
+  
   return (
     <Layout>
       <MetaData title="Home" />
       <h1>Welcome surfer...</h1>
       <div className={styles.grids}>
-        {posts.map(({ node }) => {
+        {news.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
+          const coverImageFluid = node.frontmatter?.coverImage?.childImageSharp?.fluid;
+
           return (
             <article key={node.fields.slug} className={styles.card}>
               <header>
+              {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
                 <h2>
                   <Link to={node.fields.slug}>{title}</Link>
                 </h2>
@@ -34,8 +38,9 @@ const Index = ({ data }) => {
             </article>
           );
         })}
-        <button onClick={() => scrollTo('#top')}>Top</button>
       </div>
+      <div className="h-space--md"></div>
+      <button className="button -small" onClick={() => scrollTo('#top')}>Top &uarr;</button>
     </Layout>
   );
 };
@@ -67,6 +72,13 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY")
             title
             description
+            coverImage {
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

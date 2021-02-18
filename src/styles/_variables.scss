@@ -27,6 +27,7 @@ $spaces: ('none': $space-none, 'xxs': $space-xxs, 'xs': $space-xs, 'sm': $space-
 
 // fonts
 $font-family-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$font-family-mono: monospace;
 $font-size-default: 18px;
 $font-weight-default: 400;
 $font-color-default: $color-gray;
@@ -83,7 +84,7 @@ $footer-navigation-color: $color-white;
 $footer-navigation-color-hover: darken($color-white, 30%);
 
 // images
-$image-border-radius: 10px;
+$image-border-radius: $border-radius-default;
 
 // breakpoints
 $breakpoint-xs: 320px !default;
@@ -104,6 +105,7 @@ $breakpoint-xl-max: 9999px !default;
 
 // buttons
 $button-padding                     : $space-xs $space-md !default;
+$button-padding-small               : $space-xxs $space-md !default;
 $button-transition                  : 0.3s cubic-bezier(.25, .8, .5, 1) !default;
 $button-font-size                   : $font-size-default !default;
 $button-font-weight                 : 400 !default;
@@ -127,15 +129,15 @@ $button-border-color-secondary-hover: $color-black !default;
 $button-font-color-secondary-hover  : darken($button-font-color, 30%) !default;
 
 // forms
-$form-background: $color-gray-dark;
+$form-background: $background;
 $form-border: none;
 $form-border-radius: $border-radius-default;
-$form-padding: $space-xxl;
+$form-padding: $space-none;
 $form-label-color: $color-black;
 $form-input-border: 1px solid $color-gray-dark;
 $form-input-color: $font-color-default;
 $form-input-font-family: $font-family-default;
-$form-input-background: $color-gray-light;
+$form-input-background: $color-white;
 $form-input-border-radius: $border-radius-default;
 $form-input-padding: $space-xxs 0;
 $form-input-line-height: $space-xxl;
@@ -146,3 +148,23 @@ $form-input-margin-bottom: 1.5rem;
 $social-font-size: 16px;
 $social-color: $color-white;
 $social-color-hover: darken($color-white, 30%);
+
+// pre
+$pre-font-family: $font-family-mono;
+$pre-font-size: 1em;
+$pre-margin: 0 0 2em 0;
+$pre-padding: 0;
+
+// blockquote
+$blockquote-border-left: solid 4px $color-gray;
+$blockquote-font-style: italic;
+$blockquote-margin: 0 0 2em 0;
+$blockquote-padding: 0.5em 0 0.5em 2em;
+
+// code
+$code-border: 1px solid black;
+$code-border-radius: $border-radius-sm;
+$code-padding: $space-xxs;
+$code-background: $color-gray-dark;
+$code-color: $color-black;
+$code-font-family: $font-family-mono;
