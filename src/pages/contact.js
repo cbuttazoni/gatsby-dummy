@@ -11,6 +11,14 @@ const ContactPage = ({ data: { site } }) => {
       <MetaData title="Contact" />
       <div className={styles.contact_container}>
         <h1>Get in Touch</h1>
+        <h2>Contact information</h2>
+        <p>
+          Contact information...<br/>
+          Email...<br/>
+          Telephon...<br/>
+          etc.        </p>
+
+        <h2>Or submit a form</h2>
         <p>Let me help you kick start your next project &rarr;</p>
         <form action={site?.email} method="post">
           <div>

@@ -210,6 +210,11 @@
             border-width: 0 19px 19px;
             bottom: auto;
           }
+          > li > a {
+            &::after {
+              display: none;
+            }
+          }
         }
       }
     }
