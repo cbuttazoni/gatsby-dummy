@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 
 const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -10,6 +11,7 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <MetaData title="All posts" />
+      <Heading title="My Blogs" description="Short description of the current page" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (

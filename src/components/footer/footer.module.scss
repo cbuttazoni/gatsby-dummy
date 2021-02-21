@@ -48,9 +48,11 @@
     }
   }
   h4 {
-      font-size: x-large;
       margin-top: $space-md;
       color: $footer-title-color;
+  }
+  p {
+    color: $footer-color;
   }
 }
 

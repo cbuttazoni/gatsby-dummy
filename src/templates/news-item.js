@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 
 const NewsItemTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
@@ -15,6 +16,10 @@ const NewsItemTemplate = ({ data, pageContext }) => {
       <MetaData
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+      />
+      <Heading
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
       />
       <article>
         {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}

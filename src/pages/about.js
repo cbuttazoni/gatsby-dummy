@@ -2,12 +2,13 @@ import React from 'react';
 import '../styles/styles.scss';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 import dummy from '../images/dummy.jpg';
 
 const AboutPage = () => (
   <Layout image={dummy}>
     <MetaData title="About" />
-    <h1>About the Author</h1>
+    <Heading title="About the Author" description="Short description of the current page" />
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
       molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias

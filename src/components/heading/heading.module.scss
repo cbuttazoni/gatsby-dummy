@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.heading_wrapper {
+  text-align: center;
+  h4 {
+    color: $color-secondary;
+  }
+  p {
+    text-align: center;
+    width: 65%;
+    margin: 0 auto 2rem auto;
+  }
+}
+

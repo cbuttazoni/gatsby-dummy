@@ -3,14 +3,15 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 import styles from './contact.module.scss';
 
 const ContactPage = ({ data: { site } }) => {
   return (
     <Layout>
       <MetaData title="Contact" />
+      <Heading title="Contact" description="Short description of the current page" />
       <div className={styles.contact_container}>
-        <h1>Get in Touch</h1>
         <h2>Contact information</h2>
         <p>
           Contact information...<br/>

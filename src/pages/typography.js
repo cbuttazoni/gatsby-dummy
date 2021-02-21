@@ -2,13 +2,14 @@ import React from 'react';
 import '../styles/styles.scss';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 import dummy from '../images/dummy.jpg';
 
 const TypographyPage = () => (
   <Layout>
     <MetaData title="Typography" />
-    <h1>Typography</h1>
-
+    <Heading title="Typography" description="Short description of the current page" />
+    
     <h2>Heading</h2>
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
@@ -90,8 +91,6 @@ const TypographyPage = () => (
     <button className="button -accent -wide">Accent Wide</button>
     <button className="button -accent -small">Accent Small</button>
     <button className="button -accent -wide -small">Accent Wide Small</button>
-    <button className="button -small">Small</button>
-    <button className="button -wide">Wide</button>
 
   </Layout>
 );

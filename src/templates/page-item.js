@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
+import Heading from '../components/heading/heading';
 
 const PageItemTemplate = ({ data }) => {
   const post = data.markdownRemark;
@@ -15,13 +16,19 @@ const PageItemTemplate = ({ data }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div>
+      <Heading
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+      />
+      <section dangerouslySetInnerHTML={{ __html: post.html }} />
+      {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
+      {/* <div>
         <header>
           <h1>{post.frontmatter.title}</h1>
           {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </div> */}
     </Layout>
   );
 };
