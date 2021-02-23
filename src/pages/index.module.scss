@@ -1,72 +1,21 @@
 @import '../styles/variables';
 
-.grids {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-}
-.card {
-  display: grid;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  border: 1px solid rgba(0,0,0,.12);
-  overflow: hidden;
-  line-height: 1.5;
-  box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 8%);
-  transition: all 0.5s;
-  &:hover {
-    box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 20%);
-    transition: all 0.5s;
-    color: black;
-  }
-  a {
-    color: gray;
-    &:hover {
-      color: black;
-    }
-  }
-  > header + section {
-    margin-top: 0;
-  }
-  > header,
-  section {
-    padding: 12px;
-    > h2 {
-      // line-height: 2rem;
-      + small {
-        color: black;
-      }
-    }
-  }
-}
-@media (min-width: $breakpoint-md-max) {
-  .grids:not(.info) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-// @media (min-width: $breakpoint-lg-max) {
-//   .grids {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
 .events {
   .event {
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: $grid-column-gap;
     margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    // border: 1px solid black;
+    // padding-bottom: 1.5rem;
+    background-color: white;
+    border-radius: 0;
     box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 8%);
     transition: all 0.5s;
     &:hover {
       box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 20%);
       transition: all 0.5s;
     }
-    &_date  {
+    &_date {
       padding: 10px;
       &__day {
         line-height: unset;
@@ -77,14 +26,18 @@
     }
     &_text {
       padding: 10px;
+      // h3 {
+      //   color: $color-secondary;
+      // }
       &__button {
         margin-top: 16px;
       }
     }
     &_image {
-      padding: 10px;
+      // padding: 10px;
       div {
-        margin-top: 16px;
+        // margin-top: 16px;
+        height: 100%;
       }
     }
   }
@@ -94,9 +47,7 @@
   .events {
     .event {
       grid-template-columns: 1fr 50% 30%;
-      background-color: whitesmoke;
-      border-radius: 5px;
-      // border: 1px solid black;
+      border-radius: 0;
       box-shadow: 3px 3px 8px 2px rgb(0 0 0 / 8%);
       transition: all 0.5s;
       &_date {

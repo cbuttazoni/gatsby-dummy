@@ -73,8 +73,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Marvel`,
-          `400,700` // you can also specify font weights and styles
+          'Marvel:400,700',
+          'material icons'
         ],
         display: 'swap'
       }
@@ -98,7 +98,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 700,
+              maxWidth: 800,
               backgroundColor: 'transparent',
             },
           },

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/styles.scss';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 import Heading from '../components/heading/heading';
@@ -9,7 +8,7 @@ const TypographyPage = () => (
   <Layout>
     <MetaData title="Typography" />
     <Heading title="Typography" description="Short description of the current page" />
-    
+
     <h2>Heading</h2>
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/styles.scss';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 import Heading from '../components/heading/heading';

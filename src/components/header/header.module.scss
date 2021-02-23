@@ -20,13 +20,33 @@
 }
 
 .header_logo {
-  position: absolute;
+  position: inherit;
+  height: inherit;
   margin: 0;
+  img {
+    height: ($header-height - $space-xxs * 2);
+    margin: $space-xxs 0;
+    display: inherit;
+  }
+  img.header_logo__mobile {
+    display: none;
+  }
 }
 
 @media (max-width: $breakpoint-md-max) {
   .header_inner_wrapper {
     display: block;
+  }
+
+  .header_logo {
+    position: absolute;
+    img,
+    img.header_logo__mobile {
+      display: inherit;
+    }
+    img.header_logo__desktop {
+      display: none;
+    }
   }
 
   .header_title {

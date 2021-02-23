@@ -2,11 +2,12 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import Layout from '../components/layout/layout';
 import MetaData from '../components/meta-data/meta-data';
 import Heading from '../components/heading/heading';
+import Teaser from '../components/teaser/teaser';
 import styles from './index.module.scss';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Index = ({ data }) => {
   const news = data.allMarkdownRemark.edges;
@@ -19,7 +20,7 @@ const Index = ({ data }) => {
         subTitle="Subtitle"
         description="Short description of the current page"
       />
-      <div className={[styles.grids, styles.info].join(' ')}>
+      {/* <div className={[styles.grids, styles.info].join(' ')}>
         <article className={styles.card}>
           <header>
             <h2>Some text</h2>
@@ -33,8 +34,10 @@ const Index = ({ data }) => {
             </p>
           </section>
         </article>
-      </div>
+      </div> */}
 
+      <h2>Teasers</h2>
+      <Teaser />
       <h2>Current events</h2>
       <div className={styles.events}>
         {news.map(({ node }) => {
@@ -45,8 +48,14 @@ const Index = ({ data }) => {
           return (
             <div key={node.fields.slug} className={styles.event}>
               <div className={styles.event_date}>
-                <span className={[styles.event_date__day, 'h1'].join(' ')}>{node.frontmatter.eventDateDay}</span>
-                <span className={[styles.event_date__month_year, 'h6'].join(' ')}>{node.frontmatter.eventDateMonthYear}</span>
+                <span className={[styles.event_date__day, 'h1'].join(' ')}>
+                  {node.frontmatter.eventDateDay}
+                </span>
+                <span
+                  className={[styles.event_date__month_year, 'h6'].join(' ')}
+                >
+                  {node.frontmatter.eventDateMonthYear}
+                </span>
               </div>
               <div className={styles.event_text}>
                 <h3>{title}</h3>
@@ -55,14 +64,20 @@ const Index = ({ data }) => {
                     __html: node.frontmatter.description || node.excerpt,
                   }}
                 />
-                <Link to={node.fields.slug} className={[styles.event_text__button, 'button', 'primary'].join(' ')}>
+                <Link
+                  to={node.fields.slug}
+                  className={[
+                    styles.event_text__button,
+                    'button',
+                    '-primary',
+                  ].join(' ')}
+                >
                   {title}
                 </Link>
               </div>
               <div className={styles.event_image}>
                 {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
               </div>
-
               {/* <header>
               {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
                 <h2>
@@ -78,33 +93,6 @@ const Index = ({ data }) => {
                 />
               </section> */}
             </div>
-          );
-        })}
-      </div>
-      <h2>Current news</h2>
-      <div className={styles.grids}>
-        {news.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          const coverImageFluid =
-            node.frontmatter?.coverImage?.childImageSharp?.fluid;
-
-          return (
-            <article key={node.fields.slug} className={styles.card}>
-              <header>
-                {coverImageFluid ? <Img fluid={coverImageFluid} /> : null}
-                <h2>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h2>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
           );
         })}
       </div>
@@ -150,7 +138,7 @@ export const pageQuery = graphql`
             description
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 700) {
+                fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
                 }
               }

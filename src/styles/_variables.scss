@@ -3,12 +3,13 @@ $color-white : #ffffff !default;
 $color-whitesmoke : whitesmoke !default;
 $color-black : #000000 !default;
 $color-red : #f44336 !default;
-$color-green : #96BF0D  !default;
+$color-green : #96BF0D !default;
+$color-orange : #F8B333 !default;
+$color-pink : #E85A98 !default;
 $color-yellow : yellow !default;
-$color-orange : #F8B333  !default;
 $color-gray-light : #f4f4f4 !default;
 $color-gray : #333 !default;
-$color-gray-dark : darkgray !default;
+$color-gray-dark : #3D3630 !default;
 
 $color-primary: $color-green;
 $color-secondary: $color-orange;
@@ -54,8 +55,8 @@ $link-decoration-hover-default: underline;
 // layouts
 $background: $color-whitesmoke;
 $grid-column-gap: 20px;
-$grid-content-width: 80ch;
-$border-radius-default: 5px;
+$grid-content-width: 90ch;
+$border-radius-default: 0;
 $border-radius-sm: 3px;
 $border-radius-lg: 10px;
 
@@ -81,7 +82,7 @@ $navigation-divider-last: 1px solid $color-gray;
 $footer-background: lighten($color-black, 10%);
 $footer-height: 2.5rem;
 $footer-font-size: $font-size-default;
-$footer-title-color: $color-yellow;
+$footer-title-color: $color-secondary;
 $footer-color: $color-white;
 $footer-navigation-color: $color-white;
 $footer-navigation-color-hover: darken($color-white, 30%);
@@ -107,8 +108,8 @@ $breakpoint-xl-min: map-get($sizes, "xl") !default;
 $breakpoint-xl-max: 9999px !default;
 
 // buttons
-$button-padding                     : $space-xs $space-md !default;
-$button-padding-small               : $space-xxs $space-md !default;
+$button-padding                     : $space-xs $space-sm !default;
+$button-padding-small               : $space-xxs $space-xs !default;
 $button-transition                  : 0.3s cubic-bezier(.25, .8, .5, 1) !default;
 $button-font-size                   : $font-size-default !default;
 $button-font-weight                 : 400 !default;
