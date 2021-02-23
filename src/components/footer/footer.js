@@ -33,6 +33,8 @@ const Footer = ({ siteMetadata }) => {
                 </li>
               ))}
           </ul>
+        </div>
+        <div>
           <Social />
         </div>
       </div>
