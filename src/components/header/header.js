@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Navigation from '../../components/navigation/navigation';
 import styles from './header.module.scss';
-import logo from '../../images/logo2.png';
-import logoMobile from '../../images/logo2-mobile.png';
+import logo from '../../images/logo.png';
+import logoMobile from '../../images/logo-mobile.png';
 
 const Header = ({ siteMetadata }) => {
   return (

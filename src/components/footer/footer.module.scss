@@ -20,8 +20,7 @@
   padding-bottom: $space-xxl;
   color: $footer-color;
   font-size: $footer-font-size;
-  div:first-child,
-  div:last-child {
+  div {
       height: 100%;
   }
   ul {
